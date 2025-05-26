@@ -11,6 +11,13 @@ Requirements regarding the system's CPU and RAM size are relatively modest: any 
 
 More importantly, all our experiments make use of one or more Graphics Processor Units (GPUs) to speed up LLM inference. Without a GPU, it is not feasible to reproduce our results in a reasonable amount of time. The particular GPU necessary depends on the choice of LLM: LLMs with more parameters require GPUs with more memory. For smaller models (7B parameters), desktop GPUs such as the Nvidia TitanRTX (24 GB) are sufficient. For larger models (13B), GPUs with more memory, such as the Nvidia A100 server GPU, are required. Our largest models with 34B parameters require the use of two Nvidia RTX3090 GPUs simultaneously.
 
-One can reduce the precision to float16 or int8 to reduce memory requirements without significantly affecting model predictions and their accuracy. We use float16 for 70B models by default, and int8 mode can be enabled for any model by suffixing the model name with \text{-int8}.
+One can reduce the precision to float16 or int8 to reduce memory requirements without significantly affecting model predictions and their accuracy. We use float16 for 70B models by default, and int8 mode can be enabled for any model by suffixing the model name with -int8.
 
 ### Software Dependencies
+Our code relies on Python 3.11 with PyTorch 2.1.
+
+Our systems run the Ubuntu 20.04.6 LTS (GNU/Linux 5.15.0-89-generic x86_64) operating system.
+
+In environment_export.yaml we list the exact versions for all Python packages used in our experiments. We generally advise against trying to install from this exact export of our conda environment. Please see below for installation instructions.
+
+Although we have not tested this, we would expect our code to be compatible with other operating systems, Python versions, and versions of the Python libraries that we use.
