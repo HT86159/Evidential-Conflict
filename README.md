@@ -11,10 +11,10 @@ Requirements regarding the system's CPU and RAM size are relatively modest: any 
 
 More importantly, all our experiments make use of one or more Graphics Processor Units (GPUs) to speed up LLM inference. Without a GPU, it is not feasible to reproduce our results in a reasonable amount of time. The particular GPU necessary depends on the choice of LLM: LLMs with more parameters require GPUs with more memory. For smaller models (7B or 13B parameters), they require the use of one nvidia RTX3090 GPU. Largest models with 34B parameters require the use of two nvidia RTX3090 GPUs simultaneously.
 
-One can reduce the precision to float16 or int8 to reduce memory requirements without significantly affecting model predictions and their accuracy. We use float16 for 70B models by default, and int8 mode can be enabled for any model by suffixing the model name with \text(-int8).
+One can reduce the precision to float16 or int8 to reduce memory requirements without significantly affecting model predictions and their accuracy. We use float16 for 70B models by default, and int8 mode can be enabled for any model by suffixing the model name with -int8.
 
 ### Software Dependencies
-Our code relies on Python 3.11 with PyTorch 2.1.
+Our code relies on Python 3.10 with PyTorch 2.0.1.
 
 Our systems run the Ubuntu 20.04.6 LTS (GNU/Linux 5.15.0-89-generic x86_64) operating system.
 
