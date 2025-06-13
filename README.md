@@ -16,7 +16,7 @@ One can reduce the precision to float16 or int8 to reduce memory requirements wi
 ### Software Dependencies
 Our code relies on Python 3.10 with PyTorch 2.0.1.
 
-Our systems run the Ubuntu 20.04.6 LTS (GNU/Linux 5.15.0-89-generic x86_64) operating system.
+Our systems run the Ubuntu 20.04.4 LTS operating system.
 
 In environment_export.yaml we list the exact versions for all Python packages used in our experiments. We generally advise against trying to install from this exact export of our conda environment. Please see below for installation instructions.
 
