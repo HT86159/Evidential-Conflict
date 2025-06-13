@@ -5,19 +5,25 @@ This repository contains the code and resources necessary to reproduce our exper
 We here discuss hardware and software system requirements.
 
 ### Hardware Dependencies
-GPU acceleration is crucial for reproducing our experiments within a reasonable timeframe, and the GPU model used is the NVIDIA RTX 3090 with 24GB of VRAM; note that experiments without a GPU may take significantly longer and are not recommended.
+Generally speaking, our experiments require modern computer hardware which is suited for usage with Large Vision-Language Models (LVLMs).
+Replicating our experiments within a reasonable timeframe would be challenging without a GPU.
+We used NVIDIA RTX 3090 GPUs for all tests, evaluating LLaVA models of 7B, 13B, 34B scales and mPLUG-Owl2, mPLUG-Owl3.
+Specifically, the 7B/13B models were LLaVA-v1.5, while the 34B model adopted LLaVA-v1.6 (since v1.5 lacks a 34B variant), all executed on RTX 3090s.
+For accelerated inference, 4-bit quantization is recommended to significantly reduce processing time while maintaining acceptable accuracy.
 
 ### Software Dependencies
-The experiments require Python 3.10, PyTorch 2.0.1, and Ubuntu 20.04.4 LTS.
+Our experiments utilized Python 3.10, PyTorch 2.0.1, and the Ubuntu 20.04.4 LTS operating system.
 
 ## Installation Guide
-We conducted experiments with LLaVA models including the 7B and 13B variants of LLaVA-v1.5, as well as the 34B LLaVA-v1.6 (since LLaVA-v1.5 has no 34B version), all performed on NVIDIA RTX 3090 GPUs. For enhanced inference speed, we recommend implementing 4-bit quantization, which notably reduces inference time while preserving acceptable accuracy.
-For the deployment of each model and the setup of the corresponding virtual environment, please follow the installation instructions published by the official Github repository of each model.
+For the deployment of mPLUG-Owl2, mPLUG-Owl3, and LLaVA models, please refer to the official documentation of each model for self-installation and deployment. Since our experiments involve extracting information from the Transformers decoder, reproducing our work requires modifying the Transformers source code to simultaneously return the model's output probability distribution and the state of the decoder's final hidden layer during inference. When using Evidential Conflict to quantify the uncertainty of large language models, model weight files are required. For ease of computation, we have placed these weight files on Hugging Face at: https://huggingface.co/datasets/thuang5288/PRE-HAL/tree/main/model_weights.
+
+
 
 ## Demo
 At present, we have not yet developed a Demo.
 
 ## Further Instructions
+Due to the inconsistent output formats of large language models (where responses may not include option letters like A, B, C, D), we strongly recommend using the GPT-4o API for auxiliary judgment. The standard experimental workflow is as follows: first, use the large model for inference and store the required experimental data; second, call the GPT-4o API to match the model's responses with provided options, determining correctness (0 for no hallucination, 1 for hallucination); third, use measure.py to calculate uncertainty metrics and save the results; finally, compute the AUROC (Area Under the Receiver Operating Characteristic Curve) score based on the correctness labels and uncertainty metrics.
 
 ### Repository Structure
 This respository is devided into five files, which are "infer", "infer_results", "measures", "models", "model_weights".
