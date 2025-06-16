@@ -73,8 +73,15 @@ pip install -e ".[train]"
 pip install flash-attn --no-build-isolation
 ```
 
-Since our experiments involve extracting information from the Transformers decoder, reproducing our work requires modifying the Transformers source code to simultaneously return the model's output probability distribution and the state of the decoder's final hidden layer during inference. When using Evidential Conflict to quantify the uncertainty of large language models, model weight files are required. For ease of computation, we have placed these weight files on Hugging Face at: https://huggingface.co/datasets/thuang5288/PRE-HAL/tree/main/model_weights.
+ When using Evidential Conflict to quantify the uncertainty of large language models, model weight files are required. For ease of computation, we have placed these weight files on Hugging Face at: https://huggingface.co/datasets/thuang5288/PRE-HAL/tree/main/model_weights.
 
+## Transformers source code modifying instruction
+Since our experiments involve extracting information from the Transformers decoder, reproducing our work requires modifying the Transformers source code to simultaneously return the model's output probability distribution and the state of the decoder's final hidden layer during inference.
+
+Taking the mPLUG-Owl2 as an example, first we need to determine the location of the Transformers source code. On my machine, its location is /data/username/miniconda3/envs/mplug_owl2/lib/python3.10/site-packages/transformers/generation/utils.py.
+Then we need to determine the sampling method used by the model and enter this function.
+For example, when using mPLUG-Owl2, we need to enter the ```sample``` function, then extract information such as the probability of the next token, the probability distribution, and the last hidden states of the decoder for return.
+Which specific function to enter should be determined based on the model's official documentation or by using code debugging tools to step into the function gradually.
 
 
 ## Demo
