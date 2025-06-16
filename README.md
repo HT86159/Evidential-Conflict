@@ -17,61 +17,15 @@ Our experiments utilized Python 3.10, PyTorch 2.0.1, and the Ubuntu 20.04.4 LTS 
 ## Installation Guide
 
 ### mPLUG-Owl2
-1.Clone this repository and navigate to mPLUG-Owl2 folder
-```
-git clone https://github.com/X-PLUG/mPLUG-Owl.git
-cd mPLUG-Owl/mPLUG-Owl2
-```
-2.Install Package
-```
-conda create -n mplug_owl2 python=3.10 -y
-conda activate mplug_owl2
-pip install --upgrade pip
-pip install -e .
-```
-3.Install additional packages for training cases
-```
-pip install -e ".[train]"
-pip install flash-attn --no-build-isolation
-```
+Please refer to the installation guide at the following URL: https://github.com/X-PLUG/mPLUG-Owl/tree/main
 
 
 ### mPLUG-Owl3
-1.Clone this repository and navigate to mPLUG-Owl3 folder
-```
-git clone https://github.com/X-PLUG/mPLUG-Owl.git
-cd mPLUG-Owl/mPLUG-Owl3
-```
-2.Install Package
-```
-conda create -n mplug_ow3 python=3.10 -y
-conda activate mplug_owl3
-pip install -r requirements.txt
-```
-3.Execute the demo
-```
-python gradio_demo.py
-```
+Please refer to the installation guide at the following URL: https://github.com/X-PLUG/mPLUG-Owl/tree/main
 
 
 ### LLaVA
-1.Clone this repository and navigate to LLaVA folder
-```
-git clone https://github.com/haotian-liu/LLaVA.git
-cd LLaVA
-```
-2.Install Package
-```
-conda create -n llava python=3.10 -y
-conda activate llava
-pip install --upgrade pip  # enable PEP 660 support
-pip install -e .
-```
-3.Install additional packages for training cases
-```
-pip install -e ".[train]"
-pip install flash-attn --no-build-isolation
-```
+Please refer to the installation guide at the following URL: https://github.com/haotian-liu/LLaVA/tree/main
 
  When using Evidential Conflict to quantify the uncertainty of large language models, model weight files are required. For ease of computation, we have placed these weight files on Hugging Face at: https://huggingface.co/datasets/thuang5288/PRE-HAL/tree/main/model_weights.
 
