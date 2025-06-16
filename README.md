@@ -81,7 +81,7 @@ Since our experiments involve extracting information from the Transformers decod
 At present, we have not yet developed a Demo.
 
 ## Further Instructions
-Due to the inconsistent output formats of LVLMs (where responses may not include option letters like A, B, C, D), we strongly recommend using the GPT-4o API for auxiliary judgment. The standard experimental workflow is as follows: first, use the large model for inference and store the required experimental data; second, call the GPT-4o API to match the model's responses with provided options, determining correctness (0 for no hallucination, 1 for hallucination); third, use measure.py to calculate uncertainty metrics and save the results; finally, compute the AUROC (Area Under the Receiver Operating Characteristic Curve) score based on the correctness labels and uncertainty metrics.
+Due to the inconsistent output formats of LVLMs (where responses may not include option letters like A, B, C, D), we strongly recommend using the GPT-4o API for auxiliary judgment. The standard experimental workflow is as follows: first, use the LVLMs for inference and store the required experimental data; second, call the GPT-4o API to match the model's responses with provided options, determining correctness (0 for no hallucination, 1 for hallucination); third, use measure.py to calculate uncertainty metrics and save the results; finally, compute the AUROC (Area Under the Receiver Operating Characteristic Curve) score based on the correctness labels and uncertainty metrics.
 
 ### Repository Structure
 This respository is devided into five files, which are "infer", "infer_results", "measures", "models", "model_weights".
