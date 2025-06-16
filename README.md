@@ -15,6 +15,13 @@ For accelerated inference, 4-bit quantization is recommended to significantly re
 Our experiments utilized Python 3.10, PyTorch 2.0.1, and the Ubuntu 20.04.4 LTS operating system.
 
 ## Installation Guide
+
+### mPLUG-Owl2
+1.Clone this repository and navigate to mPLUG-Owl2 folder
+```
+git clone https://github.com/X-PLUG/mPLUG-Owl.git
+cd mPLUG-Owl/mPLUG-Owl2
+```
 For the deployment of mPLUG-Owl2, mPLUG-Owl3, and LLaVA models, please refer to the official documentation of each model for self-installation and deployment. Since our experiments involve extracting information from the Transformers decoder, reproducing our work requires modifying the Transformers source code to simultaneously return the model's output probability distribution and the state of the decoder's final hidden layer during inference. When using Evidential Conflict to quantify the uncertainty of large language models, model weight files are required. For ease of computation, we have placed these weight files on Hugging Face at: https://huggingface.co/datasets/thuang5288/PRE-HAL/tree/main/model_weights.
 
 
