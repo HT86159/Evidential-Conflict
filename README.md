@@ -73,7 +73,7 @@ pip install -e ".[train]"
 pip install flash-attn --no-build-isolation
 ```
 
-For the deployment of mPLUG-Owl2, mPLUG-Owl3, and LLaVA models, please refer to the official documentation of each model for self-installation and deployment. Since our experiments involve extracting information from the Transformers decoder, reproducing our work requires modifying the Transformers source code to simultaneously return the model's output probability distribution and the state of the decoder's final hidden layer during inference. When using Evidential Conflict to quantify the uncertainty of large language models, model weight files are required. For ease of computation, we have placed these weight files on Hugging Face at: https://huggingface.co/datasets/thuang5288/PRE-HAL/tree/main/model_weights.
+Since our experiments involve extracting information from the Transformers decoder, reproducing our work requires modifying the Transformers source code to simultaneously return the model's output probability distribution and the state of the decoder's final hidden layer during inference. When using Evidential Conflict to quantify the uncertainty of large language models, model weight files are required. For ease of computation, we have placed these weight files on Hugging Face at: https://huggingface.co/datasets/thuang5288/PRE-HAL/tree/main/model_weights.
 
 
 
