@@ -22,6 +22,19 @@ Our experiments utilized Python 3.10, PyTorch 2.0.1, and the Ubuntu 20.04.4 LTS 
 git clone https://github.com/X-PLUG/mPLUG-Owl.git
 cd mPLUG-Owl/mPLUG-Owl2
 ```
+2.Install Package
+```
+conda create -n mplug_owl2 python=3.10 -y
+conda activate mplug_owl2
+pip install --upgrade pip
+pip install -e .
+```
+3.Install additional packages for training cases
+```
+pip install -e ".[train]"
+pip install flash-attn --no-build-isolation
+```
+
 For the deployment of mPLUG-Owl2, mPLUG-Owl3, and LLaVA models, please refer to the official documentation of each model for self-installation and deployment. Since our experiments involve extracting information from the Transformers decoder, reproducing our work requires modifying the Transformers source code to simultaneously return the model's output probability distribution and the state of the decoder's final hidden layer during inference. When using Evidential Conflict to quantify the uncertainty of large language models, model weight files are required. For ease of computation, we have placed these weight files on Hugging Face at: https://huggingface.co/datasets/thuang5288/PRE-HAL/tree/main/model_weights.
 
 
