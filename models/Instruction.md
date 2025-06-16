@@ -1,2 +1,2 @@
 ### Instructions
-This folder should store the code files of various models.
+This folder should store the GitHub repositories of various models.
