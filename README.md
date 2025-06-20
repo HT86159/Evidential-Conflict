@@ -27,6 +27,8 @@ Please refer to the installation guide at the following URL: https://github.com/
 ### LLaVA
 Please refer to the installation guide at the following URL: https://github.com/haotian-liu/LLaVA/tree/main
 
+All the required packages can be installed via conda.
+
  When using Evidential Conflict to quantify the uncertainty of large language models, model weight files are required. For ease of computation, we have placed these weight files on Hugging Face at: https://huggingface.co/datasets/thuang5288/PRE-HAL/tree/main/model_weights.
 
 ## Transformers source code modifying instruction
