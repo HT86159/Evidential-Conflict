@@ -29,6 +29,11 @@ Please refer to the installation guide at the following URL: https://github.com/
 
 All the required packages can be installed via conda.
 
+When performing inference using these models, you can directly run the corresponding model's inference Python file in the 'infer' directory. For example:
+```
+python mplug_owl2_infer.py
+```
+
  When using Evidential Conflict to quantify the uncertainty of large language models, model weight files are required. For ease of computation, we have placed these weight files on Hugging Face at: https://huggingface.co/datasets/thuang5288/PRE-HAL/tree/main/model_weights.
 
 ## Transformers source code modifying instruction
