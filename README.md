@@ -29,7 +29,8 @@ Please refer to the installation guide at the following URL: https://github.com/
 
 All the required packages can be installed via conda.
 
-When performing inference using these models, you can directly run the corresponding model's inference Python file in the 'infer' directory. For example:
+When performing inference using these models, you can directly run the corresponding model's inference Python file in the ```infer``` directory. 
+For example:
 ```
 python mplug_owl2_infer.py
 ```
