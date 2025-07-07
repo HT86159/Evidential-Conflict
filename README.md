@@ -59,7 +59,8 @@ The "measures" folder contains code for processing model inference results, incl
 ## Citation
 If you find this work is useful, please consider citing:
 
-```@article{huang2025visual,
+```
+@article{huang2025visual,
   title={Visual hallucination detection in large vision-language models via evidential conflict},
   author={Huang, Tao and Liu, Zhekun and Wang, Rui and Zhang, Yang and Jing, Liping},
   journal={International Journal of Approximate Reasoning},
