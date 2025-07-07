@@ -65,5 +65,5 @@ If you find this work is useful, please consider citing:
   journal={International Journal of Approximate Reasoning},
   pages={109507},
   year={2025},
-  publisher={Elsevier}
-}```.
+  publisher={Elsevier}}
+```
