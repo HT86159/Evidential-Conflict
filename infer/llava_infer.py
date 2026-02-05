@@ -156,7 +156,8 @@ def main(args):
 
             with torch.inference_mode():
     
-                output_ids,all_probs,probs_dis,next_token_evidential_activation,down_proj_input_list  = model.generate(
+                # output_ids,all_probs,probs_dis,next_token_evidential_activation,down_proj_input_list  = model.generate(
+                output_ids,all_probs,probs_dis,next_token_evidential_activation = model.generate(
                     input_ids,
                     images=image_tensor,
                     image_sizes=[image_size],
