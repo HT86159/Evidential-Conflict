@@ -48,6 +48,8 @@ Then we need to determine the sampling method used by the model and enter this f
 For example, when using mPLUG-Owl2, we need to enter the ```sample``` function, then extract information such as the probability of the next token, the probability distribution, and the last hidden states of the decoder for return.
 Which specific function to enter should be determined based on the model's official documentation or by using code debugging tools to step into the function gradually.
 
+Please refer to our provided ```transformers/generation/utils.py``` file for detailed modification.
+
 ### Repository Structure
 This respository is devided into five files, which are "infer", "infer_results", "measures", "models", "model_weights".
 Among them, the "infer" folder stores the code for model inference. 
