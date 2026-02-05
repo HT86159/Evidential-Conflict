@@ -86,7 +86,8 @@ for batch in tqdm(datasets):
     full_responses=[]
     for iter in range(6):
         with torch.inference_mode():
-            outputs,all_probs,probs_dis,next_token_evidential_activation,down_proj_input_list = model.generate(**inputs)
+            # outputs,all_probs,probs_dis,next_token_evidential_activation,down_proj_input_list = model.generate(**inputs)
+            outputs,all_probs,probs_dis,next_token_evidential_activation = model.generate(**inputs)
         original_answer=outputs[0]
         token_log_likelihoods = [torch.log(p).item() for p in all_probs]
         embedding=None
